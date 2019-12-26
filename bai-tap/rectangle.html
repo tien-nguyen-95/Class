@@ -14,49 +14,56 @@
       style="border:2px solid black;"
     ></canvas>
     <script>
-        let Rectangle = function(height, width) {
-            this.height = height;
-            this.width = width;
-            this.getHeight = function() {
-            return this.height;
-            };
-            this.getWidth = function() {
-            return this.width;
-            };  
-            this.area = function() {
-            return height * width;
-            };
-            this.perimeter = function() {
-            return (height + width) * 2;
-            };
+      let Rectangle = function(height, width) {
+        this.height = height;
+        this.width = width;
+        this.getHeight = function() {
+        return this.height;
         };
-        function getRandomHex(){
-            return Math.floor(Math.random()*255);
-        }
+        this.getWidth = function() {
+        return this.width;
+        };  
+        this.setHeight = function(height) {
+          this.height=height;
+        };
+        this.setWidth = function(width) {
+          this.width=width;
+        };  
+        this.area = function() {
+        return this.height * this.width;
+        };
+        this.perimeter = function() {
+        return (this.height + this.width) * 2;
+        };
+      };
+      function getRandomHex(){
+          return Math.floor(Math.random()*255);
+      }
 
-        function getRandomColor(){
-            let red = getRandomHex();
-            let green = getRandomHex();
-            let blue = getRandomHex();
-            return "rgb(" + red + "," + blue + "," + green +")";
-        }
-        function main() {
-            let _height = parseFloat(prompt("Nhập chiều dài"));
-            let _width = parseFloat(prompt("Nhập chiều rộng"));
-            let rectangle = new Rectangle(_height, _width);
-            let height = rectangle.getHeight();
-            let width = rectangle.getWidth();
-            let area = rectangle.area();
-            let perimeter = rectangle.perimeter();
-            let color=getRandomColor();
-            document.write(`<br> Diện tích: ${area}, chu vi: ${perimeter}`);
-            var c = document.getElementById("myCanvas");
-            var ctx = c.getContext("2d");
-            ctx.fillStyle = color;
-            ctx.fillRect(0, 0, height, width);
-            ctx.stroke();
-        }
-        main();
+      function getRandomColor(){
+        let red = getRandomHex();
+        let green = getRandomHex();
+        let blue = getRandomHex();
+        return "rgb(" + red + "," + blue + "," + green +")";
+      }
+      function main() {
+        let rectangle = new Rectangle();
+        rectangle.setHeight(30);
+        rectangle.setWidth(50);
+        let height=rectangle.getHeight();
+        let width=rectangle.getWidth();
+        let area = rectangle.area();
+        let perimeter = rectangle.perimeter();
+        let color=getRandomColor();
+        document.write(`<br> Diện tích: ${area}, chu vi: ${perimeter}`);
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = color;
+        
+        ctx.fillRect(0, 0, height, width);
+        ctx.stroke();
+      }
+      main();
     </script>
   </body>
 </html>
