@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <img src="bulboff.png" id="myImage" />
+      <button type="button" onclick="on()">bật</button>
+      <button type="button" onclick="off()">tắt</button>
+      <div id="showBattery"></div>
+    </form>
+    <script>
+      let Battery = function(energy = 10) {
+        this.energy = energy;
+        this.setEnergy = function(energy) {
+          this.energy = energy;
+        };
+
+        this.getEnergy = function() {
+          return this.energy;
+        };
+
+        this.decreaseEnergy = function() {
+          if (this.energy > 0) {
+            this.energy--;
+          }
+        };
+      };
+      let FlashLamp = function() {
+        this.status = false;
+        this.setBattery = function(battery) {
+          this.battery = battery;
+        };
+
+        this.getBatteryInfo = function() {
+          return this.battery.getEnergy();
+        };
+
+        this.light = function() {
+          if (this.status) {
+            document.getElementById("myImage").src = "bulbon.png";
+          } else {
+            document.getElementById("myImage").src = "bulboff.png";
+          }
+        };
+
+        this.turnOn = function() {
+          this.status = true;
+        };
+
+        this.turnOff = function() {
+          this.status = false;
+        };
+      };
+      let battery = new Battery();
+      let flashLamp = new FlashLamp();
+      flashLamp.setBattery(battery);
+      let showBattery = flashLamp.getBatteryInfo();
+      document.getElementById("showBattery").innerHTML = "pin " + showBattery;
+      function on() {
+        if (flashLamp.status == false) {
+          if (flashLamp.status == false && showBattery > 0) {
+            flashLamp.turnOn();
+            flashLamp.light();
+            battery.decreaseEnergy();
+            showBattery = flashLamp.getBatteryInfo();
+            document.getElementById("showBattery").innerHTML = "pin " + showBattery;
+              
+          } else {
+            flashLamp.turnOff();
+            flashLamp.light();
+          }
+        }
+      }
+      function off() {
+        flashLamp.turnOff();
+        flashLamp.light();
+      }
+    </script>
+  </body>
+</html>
