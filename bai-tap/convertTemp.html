@@ -13,10 +13,10 @@
         function Temperature(c){
             this.tempC = c;
             this.convertCtoF = function() {
-                result.innerHTML = `${c} độ C = ${(this.tempC*1.8)+32} độ F<br>`
+                result.innerHTML = `${this.tempC} độ C = ${(this.tempC*1.8)+32} độ F<br>`
             }
             this.convertCtoK = function() {
-                result.innerHTML += `${c} độ C = ${this.tempC + 273.15 } độ K`
+                result.innerHTML += `${this.tempC} độ C = ${this.tempC + 273.15 } độ K`
             }
         }
         let temp = new Temperature(25);
