@@ -1,0 +1,24 @@
+tr,td, th{
+    border: 2px solid green;
+    text-align: center;
+}
+table{
+    border-collapse: collapse;
+    width: 30%;
+}
+.click {
+    background-color: black;
+    color: chocolate;
+}
+.click:hover {
+    background-color: chocolate;
+    color: black;
+}
+.input{
+    background-color: mistyrose;
+    width: 100px;
+    height: 20px;
+    margin: 5px;
+    color: maroon;
+    text-align: center;
+}

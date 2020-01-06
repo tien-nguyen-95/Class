@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Catch & Eat</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Property</td>
+            <th>Cat</th>
+            <th>Rat</th>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>Thomas</td>
+            <td>Jerry</td>
+        </tr>
+        <tr>
+            <td>Speed</td>
+            <td><input class="input" type="text"  id="speedCat" /></td>
+            <td><input class="input" type="text"  id="speedRat" /></td>
+        </tr>
+        <tr>
+            <td>Weight</td>
+            <td><input class="input" type="text" min="1" id="weightCat" /></td>
+            <td><input class="input" type="text" min="1" id="weightRat" /></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td><input class="input" type="text" value="Alive" id="statusCat" disabled/></td>
+            <td><input class="input" type="text" value="Alive" id="statusRat" disabled/></td>
+        </tr> 
+        <tr>
+            <td>Say</td>
+            <td><input class="input" type="text" value="" id="Cat" disabled/></td>
+            <td><input class="input" type="text" value="" id="Rat" disabled/></td>
+        </tr>
+    </table>
+    <input class="click" onclick=CatchAndEat() type="button" value="Catch & Eat"/>
+
+    <script src="CatCatchRat.js"></script>
+
+</body>
+</html>
