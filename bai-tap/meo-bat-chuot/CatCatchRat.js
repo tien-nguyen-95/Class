@@ -1,6 +1,6 @@
 class Rat {
     constructor(weight,speed) {
-        this.name = name;
+        this.name = 'Jerry';
         this.weight = weight;
         this.speed = speed;
         this.status = 'Alive';
@@ -18,7 +18,7 @@ class Rat {
 
 class Cat {
     constructor(weight,speed) {
-        this.name = name;
+        this.name = 'Tom';
         this.weight = weight;
         this.speed = speed;
     }
@@ -68,6 +68,8 @@ function CatchAndEat() {
         document.getElementById('weightRat').value = jerry.weight;
         document.getElementById('Cat').value = tom.say();
         document.getElementById('Rat').value = jerry.say();
+        document.getElementById('catName').innerHTML = tom.name;
+        document.getElementById('ratName').innerHTML = jerry.name;
     }
     else {
         alert("Invalid value !!!");
