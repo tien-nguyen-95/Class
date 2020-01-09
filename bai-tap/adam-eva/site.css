@@ -1,0 +1,14 @@
+th ,td, tr{
+    border: 1px solid black;
+    text-align: center  ;
+    width: 140px;
+}
+table{
+    width: 420px;
+    height: 200px;
+    border-collapse: collapse;
+    float: left;
+}
+#WeightApple{
+    width: 50%;
+}
