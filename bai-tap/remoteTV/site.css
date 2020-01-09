@@ -1,0 +1,24 @@
+td , tr, th {
+    text-align: center;
+    border: 1px solid black;
+}
+table {
+    border-collapse: collapse;
+    width: 400px;
+    height: 300px;
+    background-color: wheat;
+    float: left;
+    margin: 5px;
+}
+#power,#move,#volUp,#volDown {
+    border-radius: 100%;
+    background-color: black;
+    color: wheat;
+}
+#chanel {
+    width: 50%;
+    
+}
+#statusTv, #chanelTv, #volumTV {
+    width: 50%;
+}
